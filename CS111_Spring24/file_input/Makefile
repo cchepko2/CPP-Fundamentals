@@ -1,5 +1,5 @@
 all:
-	clang++ file_inout.cpp
+	clang++ csv_file.cpp
 
 run:
 	./a.exe
