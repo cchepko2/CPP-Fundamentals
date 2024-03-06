@@ -11,6 +11,9 @@ all:
 run:
 	./$(PROGRAM)
 
+test:
+	./$(PROGRAM) test
+
 # A clean rule clears object and binary files for fresh compilation
 # If in windows, use 'del' instead of 'rm'
 clean:
