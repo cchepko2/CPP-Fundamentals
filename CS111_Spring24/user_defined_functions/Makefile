@@ -2,7 +2,7 @@
 CXX = clang++
 PROGRAM = main.exe
 FLAGS = -c -g -Wall -std=c++17
-CPPFILES = main.cpp
+CPPFILES = scope.cpp
 
 all:
 	$(CXX) $(FLAGS) $(CPPFILES)
@@ -17,4 +17,4 @@ test:
 # A clean rule clears object and binary files for fresh compilation
 # If in windows, use 'del' instead of 'rm'
 clean:
-	del $(PROGRAM) *.o
+	rm *.o $(PROGRAM)
