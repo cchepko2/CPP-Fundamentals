@@ -1,3 +1,7 @@
+/*
+Add programmer info and algorithm info here
+*/
+
 #include <iostream>
 
 #include <cmath>
@@ -39,8 +43,8 @@ int main() {
 
         // Calculate acceleration due to air resistance
         airResistance(vx, vy, ax, ay);
-        //ax = 0;
-        //ay = 0;
+        //ax = 0;  // make air resistance zero
+        //ay = 0;  // make air resistance zero
 
         // Update velocity
         vx += ax * dt;
