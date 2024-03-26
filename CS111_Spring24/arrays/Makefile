@@ -3,3 +3,6 @@ all:
 
 run:
 	./a.exe
+
+clean:
+	rm *.exe *.o
