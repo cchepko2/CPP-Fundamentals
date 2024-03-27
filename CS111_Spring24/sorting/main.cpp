@@ -28,7 +28,7 @@ bool greatness(float a, float b)
     return a>b;
 }
 
-bool grades(Student a, Student b)
+bool grades_sort(Student a, Student b)
 {
     return a.id<b.id;
 }
@@ -91,7 +91,7 @@ int main(void)
 
     cout << Students[0].id << endl;
 
-    sort(&Students[0], &Students[3], grades);
+    sort(&Students[0], &Students[3], grades_sort);
 
     cout << Students[0].id << endl;
 
