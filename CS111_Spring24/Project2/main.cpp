@@ -52,7 +52,7 @@ int main() {
         vy += (ay - g) * dt; // Include gravity
 
         // Output the current position
-        //std::cout << "Position: (" << x << ", " << y << ")" << ", Time: " << time << std::endl;
+        std::cout << "Position: (" << x << ", " << y << ")" << ", Time: " << time << std::endl;
         
         //Or plot an asterisk
         /*step_num++;
