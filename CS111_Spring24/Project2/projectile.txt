@@ -1,0 +1,3 @@
+mass(kg) 2.0
+radius(cm) 5.0
+dragCoefficient 0.47

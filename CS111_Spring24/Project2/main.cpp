@@ -1,19 +1,19 @@
 /*
-Add programmer info and algorithm info here
+Example program for calulating a projectile 
 */
 
 #include <iostream>
-
+#include <iomanip>
 #include <cmath>
 
 // Constants
 const double g = 9.81; // Acceleration due to gravity (m/s^2)
-const double dt = 0.005; // Time step (s)
+const double dt = 0.01; // Time step (s)
 const double airDensity = 1.225; // Air density at sea level (kg/m^3)
 const double dragCoefficient = 0.47; // Drag coefficient for a sphere
-const double radius = 0.1; // Radius of the projectile (m)
-const double area = 0.03;//M_PI * radius * radius; // Cross-sectional area (m^2)
-const double mass = 30.0; // Mass of the projectile (kg)
+const double radius = 0.3; // Radius of the projectile (m)
+const double area = M_PI * radius * radius; // Cross-sectional area (m^2)
+const double mass = 3.0; // Mass of the projectile (kg)
 // Function to calculate the acceleration due to air resistance
 
 void airResistance(double vx, double vy, double &ax, double &ay) 
@@ -34,6 +34,7 @@ int main() {
     double vx = speed * std::cos(angle * M_PI / 180);
     double vy = speed * std::sin(angle * M_PI / 180);
 
+    int step_num=0;
     // Simulation loop
     while (y >= 0) 
     {
@@ -51,7 +52,16 @@ int main() {
         vy += (ay - g) * dt; // Include gravity
 
         // Output the current position
-        std::cout << "Position: (" << x << ", " << y << ")" << ", Time: " << time << std::endl;
+        //std::cout << "Position: (" << x << ", " << y << ")" << ", Time: " << time << std::endl;
+        
+        //Or plot an asterisk
+        /*step_num++;
+        if(step_num%2 == 0)
+        {
+            std::cout << std::setw((int)(y*50/37.0)) << '*' 
+            << std::setw(5) << std::fixed << std::setprecision(1) 
+            << y << std::endl;
+        }*/
 
         time += dt;
         if(y > max_height)
@@ -64,5 +74,6 @@ int main() {
 
     }  // End while
     std::cout << "Max height: " << max_height << std::endl;
+    std::cout << area << std::endl;
     return 0;
 }
