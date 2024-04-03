@@ -6,6 +6,10 @@ Example program for calulating a projectile
 #include <iomanip>
 #include <cmath>
 
+#ifndef M_PI
+#define M_PI 3.14159
+#endif
+
 // Constants
 const double g = 9.81; // Acceleration due to gravity (m/s^2)
 const double dt = 0.01; // Time step (s)
@@ -30,7 +34,7 @@ int main() {
 
     double x = 0, y = 0, time=0, ax=0, ay=0, max_height = 0; // Initial position (m)
     double angle = 45; // Launch angle (degrees)
-    double speed = 100; // Initial speed (m/s)
+    double speed = 50; // Initial speed (m/s)
     double vx = speed * std::cos(angle * M_PI / 180);
     double vy = speed * std::sin(angle * M_PI / 180);
 
