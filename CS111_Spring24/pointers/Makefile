@@ -2,7 +2,7 @@
 CXX = clang++
 PROGRAM = main.exe
 FLAGS = -c -g -Wall -std=c++17
-CPPFILES = p_arthimatic.cpp
+CPPFILES = dynamic_memory.cpp
 
 all:
 	$(CXX) $(FLAGS) $(CPPFILES)
