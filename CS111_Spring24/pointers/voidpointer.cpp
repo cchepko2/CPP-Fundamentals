@@ -10,6 +10,9 @@ struct Thing
 int main(void)
 {
     Thing thing;
+    thing.eger = 15;
+    thing.num = 56.7892354;
+
     char name[] = "Corin";
     int nums[] = {1,2,3,4};
     double doub_nums[] = {3.14,5.6,7.8,9.9};
@@ -48,16 +51,12 @@ int main(void)
     std::cout << "void_ptr = " << void_ptr 
         << " and points to a value of " << *(char*)(void_ptr) << std::endl;
     
-    void_ptr = (void*)&thing + 1;
+    void_ptr = (void*)&thing + 4;
     std::cout << "void_ptr = " << void_ptr 
-        << " and points to a value of " << *(int*)(void_ptr) << std::endl;
-    /*std::cout << "Sizeof(char) = " << sizeof(char) << std::endl
-        << "sizeof(alpha) = " << sizeof(alpha) << std::endl;
-    void_ptr = (void*)((char*)&thing + sizeof(thing.alpha));
-
-    std::cout << "void_ptr points to value " << *(char*)void_ptr << std::endl;
-    std::cout << "thing at " << &thing << std::endl;
-    std::cout << "void_ptr points to thing value " << void_ptr << std::endl;    
-*/
+        << " and points to a value of " << *((int*)(void_ptr)) << std::endl;
+    
+    std::cout << "\nSizeof(char) = " << sizeof(char) << std::endl
+        << "sizeof(thing.alpha) = " << sizeof(thing) << std::endl;
+    
     return 0;
 }

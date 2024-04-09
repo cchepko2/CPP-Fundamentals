@@ -1,8 +1,8 @@
 # This is a comment in a make file
 CXX = clang++
-PROGRAM = main.exe
+PROGRAM = hello.exe
 FLAGS = -c -g -Wall -std=c++17 -pedantic
-CPPFILES = voidpointer.cpp
+CPPFILES = structs.cpp euler_sim.cpp
 
 all:
 	$(CXX) $(FLAGS) $(CPPFILES)
@@ -14,4 +14,4 @@ run:
 # A clean rule clears object and binary files for fresh compilation
 # If in windows, use 'del' instead of 'rm'
 clean:
-	rm $(PROGRAM) *.o *.exe
+	del $(PROGRAM) *.o
