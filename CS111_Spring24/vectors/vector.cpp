@@ -22,6 +22,11 @@ int main(void)
     {
         cout << *it << ' ';
     }
+    cout << endl;
+    for(int i=0;i<int_nums.size();i++)
+    {
+        cout << int_nums[i] << ' ';
+    }
     cout << '\n';
 
     return 0;
