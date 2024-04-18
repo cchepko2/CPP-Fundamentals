@@ -1,6 +1,6 @@
 /*
-FIXME 0 <name>
-FIXME 1 <date>
+FIXME0 <name>
+FIXME1 <date>
 File IO Lab: Reading binary data and random file access.
 */
 
@@ -17,7 +17,7 @@ struct Student
 
 void printRecord(Student record);
 
-int main(void)
+int main(int argc, char*argv[])
 {
     // FIXME3: make a varible named "record" to store a student record using 
     //         the Student type defined above
@@ -37,8 +37,8 @@ int main(void)
     // FIXME6 seek and read in the second to last record
     // FIXME7 print that record
 
-    // FIXME7: seek back to beginning of file
-    // FIXME8: read and print records until end of file
+    // FIXME8: seek back to beginning of file
+    // FIXME9: read and print records until end of file
         
     fin.close();
 
