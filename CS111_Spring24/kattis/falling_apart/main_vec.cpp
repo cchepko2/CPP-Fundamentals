@@ -6,6 +6,7 @@ Solving using arrays
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -13,34 +14,26 @@ int main(void)
 {
     int num_pieces;
     int alice=0, bob=0;
+    vector<int> pieces;
 
     cin >> num_pieces;
-
-    int *pieces = new int[num_pieces];
-    
     for(int i=0;i<num_pieces;i++)
     {
-        cin >> pieces[i];
+        int val;
+        cin >> val;
+        pieces.push_back(val);
     }
 
-    sort(&pieces[0], &pieces[num_pieces], greater());
-    
+    sort(pieces.begin(), pieces.end(), greater());
 
     for(int i=0;i<num_pieces;i++)
     {
         if(i%2 == 0)
-        {
             alice += pieces[i];
-        }
         else
-        {
             bob += pieces[i];
-        }
     }
-
     cout << alice << ' ' << bob << endl;
-
-    //delete[] pieces;
 
     return 0;
 }
