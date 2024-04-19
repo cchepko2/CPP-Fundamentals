@@ -22,7 +22,7 @@ int main(int argc, char*argv[])
 {
     // FIXME3: make a varible named "record" to store a student record using 
     //         the Student type defined above
-    Student record;
+    //TYPE record;
     std::ifstream fin;
     
     srand(time(NULL));
