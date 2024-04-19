@@ -21,7 +21,7 @@ int main(int argc, char*argv[])
 {
     // FIXME3: make a varible named "record" to store a student record using 
     //         the Student type defined above
-    Student record;
+    //TYPE record
     std::ifstream fin;
     fin.open("student_records.bin", std::ios::binary | std::ios::out);
     
@@ -38,7 +38,7 @@ int main(int argc, char*argv[])
     // FIXME7 print that record
 
     // FIXME8: seek back to beginning of file
-    // FIXME9: read and print records until end of file
+    // FIXME9: read and print records until end of file, HINT: use loop of number of records or fin.tellg()==filesize to end
         
     fin.close();
 
