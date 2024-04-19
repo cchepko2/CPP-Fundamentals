@@ -6,6 +6,7 @@ File IO Lab: Reading binary data and random file access.
 
 #include <iostream>
 #include <fstream>
+#include <cstdio>
 
 struct Student
 {
@@ -21,11 +22,18 @@ int main(int argc, char*argv[])
 {
     // FIXME3: make a varible named "record" to store a student record using 
     //         the Student type defined above
-    //TYPE record
+    Student record;
     std::ifstream fin;
+    
+    srand(time(NULL));
+    int rand_rec_num = rand()%11;
+    std::cout << "Random record num = " << rand_rec_num << std::endl;
+
     fin.open("student_records.bin", std::ios::binary | std::ios::out);
     
     // FIXME4 check if file is open, if not return -1
+
+    fin.seekg(rand_rec_num*sizeof(Student), fin.beg);  // Seek random record
     fin.read(reinterpret_cast<char*>(&record), sizeof(Student));
     printRecord(record);
 
