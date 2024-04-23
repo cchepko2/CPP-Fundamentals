@@ -1,5 +1,5 @@
 CXX = clang++
-CPP = main.cpp
+CPP = main1.cpp clock.cpp
 FLAGS = -c -g -Wall -std=c++17
 PROGRAM = main.exe
 
