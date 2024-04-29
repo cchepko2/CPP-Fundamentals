@@ -8,14 +8,16 @@ using namespace std;
 class Clock
 {
 private:
-    int num_clocks = 0;
+    int minutes, hours;
+    double seconds;
 public:
-    int seconds, minutes, hours;
     Clock();
-    Clock(int s);
+    Clock(double s);
     Clock(int s, int m, int h);
     ~Clock();
-
+    void increment(double s);
+    void setTime(int h, int m, int s);
+    void displayTime(void);
 };
 
 

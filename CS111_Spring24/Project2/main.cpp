@@ -28,13 +28,13 @@ void airResistance(double vx, double vy, double &ax, double &ay)
     ay = -force / mass * (vy / speed);
 }
 
-int main() {
+double getDistance(double angle, double distance) {
 
     // Initial conditions
 
     double x = 0, y = 0, time=0, ax=0, ay=0, max_height = 0; // Initial position (m)
-    double angle = 45; // Launch angle (degrees)
-    double speed = 50; // Initial speed (m/s)
+    //double angle = 45; // Launch angle (degrees)
+    //double speed = 50; // Initial speed (m/s)
     double vx = speed * std::cos(angle * M_PI / 180);
     double vy = speed * std::sin(angle * M_PI / 180);
 
@@ -79,5 +79,6 @@ int main() {
     }  // End while
     std::cout << "Max height: " << max_height << std::endl;
     std::cout << area << std::endl;
-    return 0;
+
+    return x;
 }
