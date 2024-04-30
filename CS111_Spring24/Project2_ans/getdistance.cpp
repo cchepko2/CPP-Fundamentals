@@ -10,6 +10,12 @@ Example program for calulating a projectile
 #define M_PI 3.14159
 #endif
 
+struct Projectile_return{
+    double distance;
+    double max_height;
+    double time;
+};
+
 // Constants
 const double g = 9.81; // Acceleration due to gravity (m/s^2)
 const double dt = 0.01; // Time step (s)
@@ -28,7 +34,7 @@ void airResistance(double vx, double vy, double &ax, double &ay)
     ay = -force / mass * (vy / speed);
 }
 
-double get_distance(double angle, double speed) {
+double get_distance(double angle, double speed, Projectile_return &return_vals) {
 
     // Initial conditions
 
@@ -48,8 +54,8 @@ double get_distance(double angle, double speed) {
 
         // Calculate acceleration due to air resistance
         airResistance(vx, vy, ax, ay);
-        //ax = 0;  // make air resistance zero
-        //ay = 0;  // make air resistance zero
+        ax = 0;  // make air resistance zero
+        ay = 0;  // make air resistance zero
 
         // Update velocity
         vx += ax * dt;
@@ -80,5 +86,8 @@ double get_distance(double angle, double speed) {
     //std::cout << "Max height: " << max_height << std::endl;
     //std::cout << area << std::endl;
 
+    return_vals.distance = x;
+    return_vals.max_height = max_height;
+    return_vals.time = time;
     return x;
 }
