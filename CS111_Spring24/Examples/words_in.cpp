@@ -9,9 +9,9 @@ int main(void)
 {
     ifstream fin;
     string line;
-    //char *words[] = new char[235886];
     vector<string> words;
     char word[100];
+    char (*words_arr)[100] = new char[235886][100];
 
     fin.open("dict-words.txt");
 
@@ -24,7 +24,7 @@ int main(void)
     int lines=0;
     while( getline(fin, line) )
     {
-        //strncpy(word,line.c_str(), 99);
+        strncpy(words_arr[lines],line.c_str(), 99);
         words.push_back(line);
         lines++;
         //cout << line << endl;
@@ -35,6 +35,7 @@ int main(void)
     int random_word = rand()%lines;
 
     cout << words[random_word] << endl;
+    cout << words_arr[random_word] << endl;
 
 
     fin.close();
