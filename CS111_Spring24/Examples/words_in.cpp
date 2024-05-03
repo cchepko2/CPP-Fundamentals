@@ -13,6 +13,8 @@ int main(void)
     char word[100];
     char (*words_arr)[100] = new char[235886][100];
 
+    cout << "Hello world!" << endl;
+
     fin.open("dict-words.txt");
 
     if(!fin.is_open())
@@ -20,7 +22,7 @@ int main(void)
         cout << "Unable to load dictionary!" << endl;
         return -1;
     }
-
+    
     int lines=0;
     while( getline(fin, line) )
     {
@@ -39,6 +41,9 @@ int main(void)
 
 
     fin.close();
+
+    ofstream fout;
+    fout.open("out.txt",ios_base::app);
 
     return 0;
 }
