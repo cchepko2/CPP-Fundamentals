@@ -21,7 +21,7 @@ int main(void)
             bool in = false;
             for(int i=0;i<6;i++)
             {
-                if( c == guesses[i])
+                if( tolower(c) == guesses[i])
                 {
                     in = true;
                     break;
