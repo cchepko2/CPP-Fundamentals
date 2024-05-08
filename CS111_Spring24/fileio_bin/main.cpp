@@ -22,6 +22,7 @@ int main(void)
     }
 
     fout.write(reinterpret_cast<char*>(&number), sizeof(number));
+    fout.write(reinterpret_cast<char*>(&doub), sizeof(doub));
     //fout.write((char*)&number, sizeof(number));
     fout.close();
 
