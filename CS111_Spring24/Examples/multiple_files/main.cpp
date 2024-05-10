@@ -7,6 +7,8 @@ int main(void)
 {
     a_really_big_function();
 
+    cout << scissors << endl;
+
     return 0;
 }
 
