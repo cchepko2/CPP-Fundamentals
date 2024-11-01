@@ -14,6 +14,7 @@ using namespace std;
 void erase_sounds(vector<string> &forest_sounds, vector<string> &animal_sounds);
 void get_forest_sounds(vector<string> &forest_sounds);
 void get_animal_sounds(vector<string> &animal_sounds);
+void print_vector(vector<string> vec);
 void test();
 
 int main(void)
@@ -35,9 +36,11 @@ int main(void)
         // We have all the sounds now
         // Collect animal sounds
         get_forest_sounds(forest_sounds);
-        get_animal_sounds(animal_sounds);
-        cin.ignore(1000, '\n');   
+        get_animal_sounds(animal_sounds); 
         erase_sounds(forest_sounds, animal_sounds);
+
+        //print_vector(forest_sounds);
+        //print_vector(animal_sounds);
 
         // For each sound in the vector of sounds
         for(auto s: forest_sounds)
@@ -64,7 +67,7 @@ void erase_sounds(vector<string> &forest_sounds, vector<string> &animal_sounds)
         {
         // for each pointer to an element in the vector
         //for(auto s_element=forest_sounds.begin(); s_element<forest_sounds.end();s_element++)
-            {
+           // {
                 if(forest_sounds[j] == animal_sounds[i])
                 {
                     forest_sounds[j] = "-";
@@ -74,7 +77,7 @@ void erase_sounds(vector<string> &forest_sounds, vector<string> &animal_sounds)
                 {
                     //*s_element = '-';
                 }*/// this is for the commented iterator loop
-            }
+          //  }
         }
     }
 }
@@ -90,8 +93,7 @@ void get_forest_sounds(vector<string> &forest_sounds)
     istringstream iss(line);
 
     while(iss >> sound)
-    {
-          
+    { 
         forest_sounds.push_back(sound);
     }
 
@@ -107,6 +109,7 @@ void get_animal_sounds(vector<string> &animal_sounds)
         //cout << "Sound = " << sound << endl;
         if( sound2 != "goes")
         {
+            //cin >> sound >> sound; // Read in "fox say" from "what does the fox say"
             break;
         }
         animal_sounds.push_back(sound);
@@ -124,4 +127,13 @@ void test(void)
     assert(forest_sounds == expected);
 
     cerr << "All tests passed!" << endl;
+}
+
+void print_vector(vector<string> vec)
+{
+    for(auto s: vec)
+    {
+        cout << s << ' ';
+    }
+    cout << endl;
 }
