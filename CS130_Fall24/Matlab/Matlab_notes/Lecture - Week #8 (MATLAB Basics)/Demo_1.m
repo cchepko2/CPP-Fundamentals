@@ -9,21 +9,22 @@
 %% Computations can be done simply by typing in a valid expression which
 %  will be evaluated according to the PEMDAS precedence rules.
 
-1 + 1
 
-10 / 4
+1 + 1;
 
-180 / 2 + 4
+10 / 4;
 
-180 / (2 + 4)
+180 / 2 + 4;
+
+180 / (2 + 4);
 
 %% All numbers are assumed to be "doubles" (i.e., they can have fractional
 %  parts) and variables don't have to be declared before they are used.  An
 % "=" is the assignment operator.
 
-sum = 1 + 2 + 3 + 4
+sum = 1 + 2 + 3 + 4;
 
-average = sum / 4
+average = sum / 4;
 
 sum = sum + 1
 

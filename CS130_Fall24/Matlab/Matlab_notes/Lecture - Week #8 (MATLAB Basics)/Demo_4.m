@@ -63,6 +63,10 @@ B = [
     8
     7
     6
- ]   
+ ]
 
 sum = A + B
+
+A = A' % transpose from column to row vector
+B
+sum = A+B
