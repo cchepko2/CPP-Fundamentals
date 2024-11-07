@@ -3,9 +3,9 @@ clc;
 
 gravity = 9.81
 
-feet_meters = input("What units to use (\"f\", \"m\"): ");
+feet_meters = input("What units to use (\"f\", \"m\"): ", 's');
 feet_meters
-if( feet_meters == "f" )
+if( feet_meters(1) == 'f' )
   gravity = 32.2;
 else
   gravity = 9.81;
