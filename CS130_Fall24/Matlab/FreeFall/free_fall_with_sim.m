@@ -10,6 +10,8 @@ clear; clc; close all; format;
 % set initial conditions
 gravity = -9.81;
 time_inc = 10^-3;
+drag_coeff = 0.47;
+area = .75^2; % square meters of area of spherical skydiver
 dist = 0;
 velocity = 1000;
 accel = gravity;
@@ -18,7 +20,13 @@ time= 0;
 % Start simulation
 new_dist = 0;
 while(new_dist >= 0 )
-  [new_dist, new_velocity, new_accel] = free_fall_sim(time_inc, dist(end), velocity(end), accel(end));
+
+  if( new_dist < 275 && sign(velocity(end)) < 0)
+    area = 22.3;
+    drag_coeff = 1;
+  end
+
+  [new_dist, new_velocity, new_accel] = free_fall_sim(time_inc, dist(end), velocity(end), accel(end), area, drag_coeff);
   dist(end+1) = new_dist;
   velocity(end+1) = new_velocity;
   accel(end+1) = new_accel;
@@ -30,7 +38,7 @@ end
 
 figure
 
-hold on
+%hold on
 
 plot(time, dist);
 title('Free Fall Height');
@@ -40,7 +48,7 @@ grid on
 
 %% Plot velocity vs time.
 
-%figure
+figure
 
 % convert velocities from m/s to mph
 velocity = velocity*2.23694;
@@ -53,7 +61,7 @@ grid on
 
 %% Plot acceleration vs time.
 
-%figure
+figure
 
 % convert accel from m/s^2 to gravities
 accel = accel / abs(gravity);

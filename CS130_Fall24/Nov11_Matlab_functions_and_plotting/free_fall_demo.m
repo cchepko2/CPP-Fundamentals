@@ -45,8 +45,4 @@ grid on
 
 figure
 plot (time, accel2)
-for i = 1:size(
-  if(abs(acc) <= 0.5)
-    acc
-  end
-end
+

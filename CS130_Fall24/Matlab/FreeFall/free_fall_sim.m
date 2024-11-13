@@ -1,10 +1,8 @@
-function [new_dist, new_velocity, new_accel] = free_fall_sim(time_inc, dist, velocity, accel)
+function [new_dist, new_velocity, new_accel] = free_fall_sim(time_inc, dist, velocity, accel, area, drag_coeff)
   %accel = 9.81; accel, even though a constant, in order
   % to plot vs time needs to be a vector
 
   gravity = -9.81;
-  drag_coeff = 0.47;
-  area = .75^2; % square meters of area of spherical skydiver
   air_d = 1.225;
   mass = 50;
 
