@@ -9,9 +9,9 @@ function [new_dist, new_velocity, new_accel] = free_fall_sim(time_inc, dist, vel
   mass = 50;
 
   Drag = -1*sign(velocity)*drag_coeff*air_d*area/(2*mass)*velocity^2;
-  if(Drag+gravity > 0)
-    Drag = -1*gravity;
-  end
+  %if(Drag+gravity > 0)
+  %  Drag = -1*gravity;
+  %end
   new_accel = gravity+Drag;
   new_velocity = velocity + new_accel*time_inc;
   new_dist = dist+new_velocity*time_inc;
