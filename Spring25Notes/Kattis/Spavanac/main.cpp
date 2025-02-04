@@ -21,6 +21,7 @@ int main()
 
     cin >> hours >> minutes;
     
+    // In case hours starts at 0, add 24 and modulus later
     hours += 24;
 
     min_after_mid = hours*60 + minutes;
