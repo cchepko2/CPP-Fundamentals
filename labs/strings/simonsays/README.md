@@ -8,7 +8,7 @@ If you've run your program, an executable of your code is automatically created 
 file, without the extention.
 
 Type the command "./<program_name> test"
-Ex: ./simonsays test
+Ex: ./main test
 
 If your test assert statements work, the final cout in the test function will print, otherwise the program will stop with
 an assertion error.
