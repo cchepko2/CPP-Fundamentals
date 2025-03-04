@@ -12,6 +12,9 @@ Type the command "./<program_name> test"
 
 Ex: ./main.exe test
 
+NOTE: be sure to run your program after any fixes before trying the test. That way your executable is re-built to reflect
+any changes.
+
 If your test assert statements work, the final cout in the test function will print, otherwise the program will stop with
 an assertion error.
 
