@@ -1,4 +1,4 @@
-# Simonsays Lab
+# Simon Says Lab
 
 ##
 Ignore the Makefile
