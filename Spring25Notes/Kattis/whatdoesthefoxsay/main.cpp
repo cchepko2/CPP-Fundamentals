@@ -38,16 +38,15 @@ int main(void)
             sounds.push_back(third_word);
         }
 
-        do
+        do  // Start reading in the known_sounds
         {
             cin >> third_word >> third_word >> third_word;
             if(third_word != "the")
             {
                 known_sounds.push_back(third_word);
             }
-            else{
-                cin >> third_word >> third_word; // Get rid of "fox say"
-                cin.ignore(1000, '\n');
+            else{  // Must be the "what does the fox say?" phrase, stop reading inputs
+                cin.ignore(1000, '\n'); // Get rid of "fox say?" and newline character
                 break;
             }
         } while (third_word != "the");
