@@ -24,7 +24,8 @@ int main(void)
     char units;
     double angle, conversion_factor, velocity;
     double x=0, y=0, time=0, max_height = 0;
-
+    double area = M_PI*pow(radius, 2);
+    
     cout << "Enter the velocity: ";
     cin >> velocity;
     cout << "Enter the angle in degrees: ";
@@ -34,7 +35,7 @@ int main(void)
 
     double v_vert = velocity*sin(angle);
     double v_horz = velocity*cos(angle);
-    double area = M_PI*pow(radius, 2);
+    
 
     while(y >= 0)
     {
