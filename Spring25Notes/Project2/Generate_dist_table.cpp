@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -11,22 +12,39 @@ const double M_TO_FT = 3.28;   // 1 meter to feet conversion
 double calc_dist(double alpha, double muzzle_velocity);
 
 int main() {
-    double alpha, muzzle_velocity;
-    
-    
-    double table[10][10];
+    double alpha, muzzle_velocity, target_dist;
+    double close_enough = 6.0;
+    double max_vel = 100;
 
-    for(int i=1;i<=10; i++)
+    cout << "Enter target distance: ";
+    cin >> target_dist;
+    
+    int num_angles = 10;
+    int num_velocities = 10;
+    double table[num_angles][num_velocities];
+    vector<vector<double>> matches;
+
+    for(int i=1;i<=num_angles; i++)
     {
-        alpha = i*90/10;
-        for(int j=1;j<=10;j++)
+        alpha = i*90/num_angles;
+        for(int j=1;j<=num_velocities;j++)
         {
-            muzzle_velocity = j*100/10;
+            muzzle_velocity = j*max_vel/num_velocities;
             table[i-1][j-1] = calc_dist(alpha, muzzle_velocity);
+            if(fabs(table[i-1][j-1] - target_dist) <= close_enough)
+            {
+                matches.push_back({alpha, muzzle_velocity});
+            }
         }
     }
 
     cout << fixed << setprecision(1);
+    cout << setw(6) << 0;
+    for(int i=1;i<=num_velocities;i++)
+    {
+        cout << setw(7) << i*max_vel/num_velocities;
+    }
+    cout << endl;
     for(int i=1;i<=10; i++)
     {
         alpha = i*90/10;
@@ -36,6 +54,13 @@ int main() {
             cout << setw(7) << table[i-1][j-1];
         }
         cout << endl;
+    }
+
+    cout << "Found " << matches.size() << " target solutions:" << endl;
+    for(int i=0;i<matches.size();i++)
+    {
+        cout << "Angle of " << matches[i][0]
+            << " and velocity of " << matches[i][1] << endl;
     }
 
     return 0;
