@@ -13,14 +13,14 @@ double calc_dist(double alpha, double muzzle_velocity);
 
 int main() {
     double alpha, muzzle_velocity, target_dist;
-    double close_enough = 6.0;
+    double close_enough = 2.0;
     double max_vel = 100;
 
     cout << "Enter target distance: ";
     cin >> target_dist;
     
-    int num_angles = 10;
-    int num_velocities = 10;
+    int num_angles = 30;
+    int num_velocities = 30;
     double table[num_angles][num_velocities];
     vector<vector<double>> matches;
 
