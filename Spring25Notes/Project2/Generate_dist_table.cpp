@@ -19,8 +19,8 @@ int main() {
     cout << "Enter target distance: ";
     cin >> target_dist;
     
-    int num_angles = 30;
-    int num_velocities = 30;
+    int num_angles = 10;
+    int num_velocities = 10;
     double table[num_angles][num_velocities];
     vector<vector<double>> matches;
 
