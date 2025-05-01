@@ -11,8 +11,8 @@ compute the sin and cosine of the angle.
 #define drag_coeff 0.47
 #define air_density 1.225
 #define time_step 0.0001
-#define radius 0.05
-#define mass 1
+#define radius 0.37
+#define mass 0.4
 #define GRAVITY -9.81
 
 using namespace std;

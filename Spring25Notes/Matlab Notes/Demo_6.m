@@ -4,9 +4,9 @@ clear; clc;
 
 %% A row vector can be initialized with a linear progression of values.
 
-xValues = 0 : 1 : 100;     % First element = 0, each subsequent element is one
+xValues = 0 : 1: 100;     % First element = 0, each subsequent element is one
                            % greater, until last element is reached.
-                    
+%xValues = linspace(0, 100, 100) % Create 100 evenly spaced values                   
 yValues = sqrt(xValues);
 
 %% The plot(..., ...) function plots the first vector along the horizontal

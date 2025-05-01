@@ -20,5 +20,10 @@ disp('it''s fleece was white as snow.')
 disp('Everywhere that Mary went,')
 disp('The lamb was sure to go.')
 
-disp(positive_root_squared)
+%disp(positive_root_squared)
+positive_root_squared
 disp(negative_root_squared)
+
+%% messages and disp
+messages = ["Mary had ", 1, " sheep dog too."]
+disp(messages)

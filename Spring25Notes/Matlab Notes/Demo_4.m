@@ -7,12 +7,14 @@ clear; clc
 %  enclosing its elements in square brackets ("[]").
 
 My_row_vector = [ 12, 15, 62, -28, 17 ];
-My_row_vector
+% Commas are not required
+My_row_vector = [ 12 15 62 -28 17 ];
+My_row_vector*2
 
 %% A variable can be initialized to a column vector (vertical array) in several ways.
 
 My_col_vector = [ 1; 4; 9; 16; 25; 36 ];
-My_col_vector
+My_col_vector*2
 
 % or, alternatively:
 
@@ -49,10 +51,10 @@ disp( sqrt(My_col_vector) );
 %% If two row vectors have the same number of elements, element-by-element
 %  arithmetic can be done between them.
 
-A = [ 1, 2, 3, 4, 5 ];
-B = [ 5, 4, 3, 2, 1 ];
+A = [ 1, 2, 3, 4, 5 ]
+B = [ 5, 4, 3, 2, 1 ]
 
-sum = A + B
+sum = A' + B
 
 %% If two column vectors have the same number of elements, element-by-element
 %  arithmetic can be done between them.

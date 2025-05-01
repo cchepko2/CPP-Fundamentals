@@ -6,12 +6,13 @@ clear; clc;
 %  One way matrices can be initialized is by specifying the row vectors:
 
 My_matrix_1 = [
-    [ 8, 1, 6 ],
+    [ 8, 1, 6i ],
     [ 3, 5, 7 ],
-    [ 4, 9, 2 ]
-];
+    [ 4i, 9, 2 ]
+]
 
-My_matrix_1
+transpose(My_matrix_1)
+My_matrix_1'
 
 %% Another way to initialize a matrix is by specifying the column vectors:
 
@@ -39,6 +40,8 @@ third_row_second_column = My_matrix_1(3,2)
 
 %% When the symbol ":" is used as a subscript, it means "all".  So, to
 %  reference all matrix elements in a row:
+% Unlike C++, index begin at 1, and instead of [] to refer to elements,
+% Matlab uses ()
 
 first_row  = My_matrix_1(1,:)
 second_row = My_matrix_1(2,:)
@@ -53,4 +56,5 @@ third_col  = My_matrix_1(:,3)
 %% This would be a long-winded way of referencing the entire matrix:
 
 all_rows_all_columns = My_matrix_1(:,:)
+My_matrix_1
 
