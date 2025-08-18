@@ -1,3 +1,0 @@
-radius 0.71
-name Lupe
-integer 89
