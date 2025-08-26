@@ -7,6 +7,8 @@ Description: Hello World Program
 #include <iostream>
 #include <stdio.h>
 
+#define PI 3.1459
+
 // Include the std namespace so we don't have to type "std::" before every cout statement
 using namespace std;
 
@@ -15,10 +17,13 @@ int main(void)
     // A type char variable, will take the character corresponding the the ascii number
     // These two lines are the same
     char letter = 'A'+32;
+    string name = "Corin Chepko";
+
     //int number = 0b01111111111111111111111111111111;
     int number = 0b00010110;
     int neg_num = 0b10000000000000000000000000000000;
     float f_number = 6.2;
+
     //char letter = 65;
 
     cout << "The size of char letter is " << sizeof(letter) << " bytes." << endl;
@@ -28,6 +33,9 @@ int main(void)
 
     cout << letter << endl;
     cout << "Hello \n World!" << endl;
+
+    cout << "PI = " << PI << endl;
+    cout << "PI ~= " << 22/2. << endl;
 
     return 0;
 }
