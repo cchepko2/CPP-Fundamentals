@@ -22,6 +22,7 @@ int main(void)
     //int number = 0b01111111111111111111111111111111;
     int number = 0b00010110;
     int neg_num = 0b10000000000000000000000000000000;
+    neg_num = 0b11111111111111111111111111111111;
     float f_number = 6.2;
 
     //char letter = 65;
