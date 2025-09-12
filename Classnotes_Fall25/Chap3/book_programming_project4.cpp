@@ -21,7 +21,7 @@ int main(void)
     cout << "Enter day of the month: 1-31: ";
     cin >> day;
 
-    h = (day + 26*(month + 1)/10 + (year%100) + (year%100)/4 + year/400 + 5*year/100)%7;
+    h = (day + 26*(month + 1)/10 + (year%100) + (year%100)/4 + (year/100)/4 + 5*year/100)%7;
 
     switch(h)
     {
