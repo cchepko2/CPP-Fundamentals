@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -6,6 +7,8 @@ int main(void)
 {
     int year, month, day, h;
     string day_of_week;
+
+    int q, m, k, j;
 
     cout << "Enter year: (e.g., 2012): ";
     cin >> year;
@@ -20,6 +23,13 @@ int main(void)
 
     cout << "Enter day of the month: 1-31: ";
     cin >> day;
+
+    q = day;
+    m = month;
+    k = year%100;
+    j = year/100;
+
+    printf("q = %d, m = %d, k = %d, j = %d\n", q, m, k, j);
 
     h = (day + 26*(month + 1)/10 + (year%100) + (year%100)/4 + (year/100)/4 + 5*year/100)%7;
 
@@ -50,5 +60,6 @@ int main(void)
     }
     cout << "Day of the week is " << day_of_week << endl;
 
+    cout << (273%7) << endl;
     return 0;
 }
