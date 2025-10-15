@@ -6,6 +6,7 @@ using namespace std;
 
 double get_dist(double angle, double velocity);
 void linspace(double begin, double end, int num_points, double angles[]);
+void print_values(double first[], double second[], int num_points);
 
 const int num_points = 11;
 
@@ -23,20 +24,7 @@ int main()
         distance[i] = get_dist(angles[i], 100.0);
     }
     
-    // Print angles:
-    for(int i=0; i<num_points; i++)
-    {
-        cout << angles[i] << ", ";
-    }
-    cout << endl;
-
-
-    // Print distances:
-    for(int i=0; i<num_points; i++)
-    {
-        cout << distance[i] << ", ";
-    }
-    cout << endl;
+    print_values(angles, distance, num_points);
 
     return 0;
 }
@@ -53,4 +41,21 @@ void linspace(double begin, double end, int num_points, double angles[])
         double increment = end/(num_points-1);
         angles[i] = increment*i;
     }
+}
+
+void print_values(double first[], double second[], int num_points)
+{
+    // Print angles:
+    for(int i=0; i<num_points; i++)
+    {
+        cout << first[i] << ", ";
+    }
+    cout << endl;
+
+    // Print distances:
+    for(int i=0; i<num_points; i++)
+    {
+        cout << second[i] << ", ";
+    }
+    cout << endl;
 }
