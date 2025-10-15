@@ -8,8 +8,8 @@ double get_dist(double angle, double velocity);
 
 int main()
 {
-    double data[SIZE];
-    double angles[SIZE];
+    double data[SIZE+1];
+    double angles[SIZE+1];
 
     double solutions[SIZE];
 
