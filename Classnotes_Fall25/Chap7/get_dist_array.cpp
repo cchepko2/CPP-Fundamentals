@@ -5,52 +5,38 @@
 using namespace std;
 
 double get_dist(double angle, double velocity);
+void linspace(double begin, double end, int num_points, double angles[]);
+
+const int num_points = 11;
 
 int main()
 {
-    double data[SIZE+1];
-    double angles[SIZE+1];
+    double distance[num_points];
+    double angles[num_points];
 
-    double solutions[SIZE];
+    // Fill in angles array
+    linspace(0, 90, num_points, angles);
 
-    for(int i=0; i<=SIZE; i++)
+    // For each angle
+    for(int i=0; i<num_points; i++)
     {
-        angles[i] = 90/SIZE*i;
-        solutions[i] = get_dist(angles[i], 100.0);
-        cout << angles[i] << ' ';
+        distance[i] = get_dist(angles[i], 100.0);
+    }
+    
+    // Print angles:
+    for(int i=0; i<num_points; i++)
+    {
+        cout << angles[i] << ", ";
     }
     cout << endl;
 
 
-    // Print the solutions
-    for(auto ans: solutions)
+    // Print distances:
+    for(int i=0; i<num_points; i++)
     {
-        cout << ans << ' ';
+        cout << distance[i] << ", ";
     }
     cout << endl;
-
-/*
-    for(double value: data)
-    {
-        cin >> value;
-    }
-    cout << endl;
-    */ //Will not work for writing values, only reading
-
-    cout << "sizeof(data = " << sizeof(data) << endl;
-
-    for(int i=0; i<sizeof(data)/sizeof(double); i++)
-    {
-        cin >> data[i];
-    }
-
-    for(double value: data)
-    {
-        cout << value;
-    }
-    cout << endl;
-
-
 
     return 0;
 }
@@ -58,4 +44,13 @@ int main()
 double get_dist(double angle, double velocity)
 {
     return angle*velocity;
+}
+
+void linspace(double begin, double end, int num_points, double angles[])
+{
+    for(int i=0; i<num_points; i++)
+    {
+        double increment = end/(num_points-1);
+        angles[i] = increment*i;
+    }
 }
