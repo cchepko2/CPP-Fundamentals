@@ -1,4 +1,5 @@
-#include <iostream> 
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,13 +14,15 @@ int main()
     do
     {
         cin >> num;
-        if(num > 1 and num < 100)
+        if(num >= 1 and num <= 100)
         {
             numbers[num_ints] = num;
             num_ints++;
         }
 
     } while (num != 0);
+
+    sort(&numbers[0], &numbers[num_ints-1]);
 
     bool already_counted_flag = false;
     for(int i=0; i<num_ints; i++)
