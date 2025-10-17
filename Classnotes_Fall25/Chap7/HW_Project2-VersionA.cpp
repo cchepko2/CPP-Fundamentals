@@ -22,6 +22,7 @@ int main()
 
     } while (num != 0);
 
+    // sort requires <algorithm> included at beginning of file
     sort(&numbers[0], &numbers[num_ints-1]);
 
     bool already_counted_flag = false;
