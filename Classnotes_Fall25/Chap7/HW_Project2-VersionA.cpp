@@ -10,6 +10,8 @@ int main()
     int num;
     int num_ints=0;
 
+    string name;
+
     cout << "Enter the numbers between 1 and 100 ending with 0: ";
     do
     {
