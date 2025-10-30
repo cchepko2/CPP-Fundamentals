@@ -20,18 +20,33 @@ Algorithm steps:
 
 using namespace std;
 
+string translate_line(string line);
+
 int main()
 {
-    string line;
-      
+    string line, translated;
+    
+    
     cerr << "Enter lines to translate: " << endl;
 
-    getline(cin, line);
+    while( getline(cin, line) )
+    {
+        if( line == "")
+        {
+            break;
+        }
+        translated = translate_line(line);
+        cout << translated << endl; 
+    }
+    
+    return 0;
+}
 
-    // The following code up to line 61 
-    //  translates and prints a line
+string translate_line(string line)
+{
     istringstream words_in(line);
     string word;
+    string translated = "";
 
     while( words_in >> word )
     {
@@ -39,9 +54,9 @@ int main()
              or word[0] == 'u' or word[0] == 'y') // begins with vowel
         {
             word = word + "yay";
-            cout << word + ' ';
+            translated += word + ' ';
         }
-        else // begins with consonant
+        else // begin with consonant
         {
             for(int i=0; i< word.length(); i++) // for each letter
             {
@@ -50,15 +65,14 @@ int main()
 
                 if(character == 'a' or character == 'e' or character == 'i' 
                     or character == 'o' or character == 'u' or character == 'y')
-                {   // Found the first vowel, now to translate the word
+                {
                     string new_word = word.substr(i) + word.substr(0, i) + "ay";
-                    cout << new_word + ' ';
+                    translated += new_word + ' ';
                     break;
                 }
             }
         }
     }
-    cout << endl;
-
-    return 0;
+  
+    return translated;
 }
