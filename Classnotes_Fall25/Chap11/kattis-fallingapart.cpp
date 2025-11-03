@@ -19,6 +19,7 @@ int main()
     //int integers[num_integers]; // generally not allowed
     int *integers = new int[num_integers];
 
+    
     for( int i=0; i<num_integers; i++)
     {
         //cout << *(integers + i) << '\t';
