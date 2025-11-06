@@ -17,7 +17,6 @@ int main()
     }
 
     int_vector.erase(int_vector.begin()+1);
-    int_vector.
 
     for(auto i = int_vector.begin(); i != int_vector.end(); i++)
     {

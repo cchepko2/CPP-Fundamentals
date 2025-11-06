@@ -55,7 +55,7 @@ int main()
 bool isConsecutiveFour(const vector<vector<int>> values)
 {
     int count = 0;
-    int last_number = values[0][0];
+    int last_number = values[0][0]-1;
     bool found = false;
     int columns = values[0].size();
     int rows = values.size();
