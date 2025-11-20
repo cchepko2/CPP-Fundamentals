@@ -2,8 +2,6 @@
 
 using namespace std;
 
-//const int num_angles = 11;
-
 void linspace(double begin, double end, const int num_points, double data[]);
 
 int main()
