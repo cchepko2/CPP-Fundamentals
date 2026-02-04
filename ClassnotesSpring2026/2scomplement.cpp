@@ -20,9 +20,10 @@ int main() // main entry to the program
     // Signed integers that have a 1 as the first digit are negative
     int num = 0b11111111111111111111111111111111;
     int neg_big = 0b10000000000000000000000000000000;
-
+    int pos_big = 0b01111111111111111111111111111111;
     cout << num << endl;
     cout << neg_big << endl;
+    cout << pos_big << endl;
 
     return 0;
 }
