@@ -1,3 +1,9 @@
+/*
+Corin Chepko
+2/19/26
+Kattis Problem - doggopher: https://open.kattis.com/problems/doggopher
+*/
+
 #include <iostream>
 #include <cmath>
 
@@ -15,22 +21,25 @@ int main()
     cin >> gopher_x >> gopher_y >> dog_x >> dog_y;
 
     cerr << "Enter hole coordinates: ";
-    cin >> hole_x >> hole_y;
-
-    dog_dist = sqrt(pow((dog_x - hole_x), 2) + pow((dog_y - hole_y), 2));
-    gopher_dist = sqrt(pow((gopher_x - hole_x), 2) + pow((gopher_y - hole_y), 2));
-    cerr << "Gopher dist = " << gopher_dist << endl;
-    cerr << "Dog dist = " << dog_dist << endl;
-
-    if(gopher_dist*2 < dog_dist)
+    
+    
+    while(cin >> hole_x >> hole_y)
     {
-        cout << "The gopher can escape through the hole at ("
-            << hole_x << "," << hole_y << ")." << endl;
+
+        dog_dist = sqrt(pow((dog_x - hole_x), 2) + pow((dog_y - hole_y), 2));
+        gopher_dist = sqrt(pow((gopher_x - hole_x), 2) + pow((gopher_y - hole_y), 2));
+        cerr << "Gopher dist = " << gopher_dist << endl;
+        cerr << "Dog dist = " << dog_dist << endl;
+
+        if(gopher_dist*2 <= dog_dist)
+        {
+            cout << "The gopher can escape through the hole at ("
+                << hole_x << "," << hole_y << ")." << endl;
+            return 0; // Exit the program
+        }
+        
     }
-    else
-    {
-        cout << "The gopher cannot escape." << endl;
-    }
+    cout << "The gopher cannot escape." << endl;
 
     return 0;
 }
