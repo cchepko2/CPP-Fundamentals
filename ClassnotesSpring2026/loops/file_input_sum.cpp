@@ -16,9 +16,6 @@ int main()
     double sum=0;
     double number;
 
-    fin >> number;
-    cout << number << endl;
-
     while( fin >> number)
     {
         sum += number;
