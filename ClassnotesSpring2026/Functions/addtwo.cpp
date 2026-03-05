@@ -6,12 +6,32 @@ Kattis: add_two_numbers
 
 using namespace std;
 
-int addtwo(int a, int b)
+int addtwo_by_val(int a, int b)
 {
-    a += 1;
-    b += 1;
-    cout << "Addtwo:  n1 = " << a << ", n2 = " << b << endl;
-    return a+b;
+    double sum = a+b;
+
+    a = 99999;
+    b = 99999;
+
+    cout << "Addtwo:  a = " << a << ", b = " << b << endl;
+    cout << "Addtwo: &a = " << &a << ", &b = " << &b << endl;
+    cout << endl;
+
+    return sum;
+}
+
+int addtwo_by_ref(int &a, int &b)
+{
+    double sum = a+b;
+
+    a = 99999;
+    b = 99999;
+
+    cout << "Addtwo:  a = " << a << ", b = " << b << endl;
+    cout << "Addtwo: &a = " << &a << ", &b = " << &b << endl;
+    cout << endl;
+
+    return sum;
 }
 
 int main()
@@ -23,10 +43,17 @@ int main()
     cin >> n1 >> n2;
 
     cout << "Main: n1 = " << n1 << ", n2 = " << n2 << endl;
+    cout << "Addtwo: &n1 = " << &n1 << ", &n2 = " << &n2 << endl;
+    cout << endl;
 
-    cout << addtwo(n1, n2) << endl;
+    cout << addtwo_by_val(n1, n2) << endl;
 
     cout << "Main: n1 = " << n1 << ", n2 = " << n2 << endl;
+    cout << "Addtwo: &n1 = " << &n1 << ", &n2 = " << &n2 << endl;
+
+    cout << addtwo_by_ref(n1, n2) << endl;
+    cout << "Main: n1 = " << n1 << ", n2 = " << n2 << endl;
+    cout << "Addtwo: &n1 = " << &n1 << ", &n2 = " << &n2 << endl;
 
     return 0;
 }

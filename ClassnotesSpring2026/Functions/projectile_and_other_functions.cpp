@@ -67,3 +67,14 @@ double distance_calc(double a, double v)
     d = pow(v, 2)*sin(2*a)/gravity;
     return d;
 }
+
+
+// Distance function that takes the address of the variables from main and will fill
+// in the answers
+void distance_time_height_calc(double angle, double velocity, 
+        double &distance, double &height, double &time)
+{
+    distance = pow(velocity, 2)*sin(2*angle)/gravity;
+    time = 14;
+    height = 100;
+}
