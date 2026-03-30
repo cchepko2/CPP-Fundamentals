@@ -12,6 +12,10 @@ int main()
     {
         cout << (small_array+i) << '\t' << (big_array + i) << endl;
     }
+    for(int i=0; i<10; i++)
+    {
+        cout << small_array[i] << '\t' << big_array[i] << endl;
+    }
 
     cout << big_array << endl;
 
