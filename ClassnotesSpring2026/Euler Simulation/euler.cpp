@@ -26,12 +26,13 @@ int main()
 {
     PROJECTILE Projectile1; 
 
-    Projectile1.mass = 5.0;
-    Projectile1.radius = 0.5;
+    Projectile1.mass = 0.057; // Tennis Ball
+    Projectile1.radius = 0.034; // Tennis ball
     Projectile1.drag_coeff = 0.47;
 
     cout << "Mass = " << Projectile1.mass << endl;
     cout << "Radius = " << Projectile1.radius << endl;
+    cout << "Area = " << pow(Projectile1.radius, 2)*M_PI << endl;
 
     double angle;
     double velocity;
@@ -59,7 +60,7 @@ void get_distance_euler(PROJECTILE &projectile, double angle, double velocity)
     double x = 0, y = 0;
     double x_accel, y_accel, x_vel, y_vel;
     double max_height = 0, time = 0;
-    double curr_velocity, curr_accel_air;
+    double curr_velocity;
 
     const double gravity = 9.81;
     const double time_step = 0.001;
@@ -72,15 +73,14 @@ void get_distance_euler(PROJECTILE &projectile, double angle, double velocity)
     while(y > -0.01)
     {
         curr_velocity = sqrt(pow(x_vel, 2) + pow(y_vel, 2));
-        curr_accel_air = 0.5*air_density*projectile.drag_coeff*pow(curr_velocity, 2)*area/projectile.mass;
-
-        x_accel = -1*curr_accel_air*(x_vel/curr_velocity)*time_step;
-        y_accel = -1*curr_accel_air*(y_vel/curr_velocity)*time_step;
+        //curr_accel_air = 0.5*air_density*projectile.drag_coeff*pow(curr_velocity, 2)*area/projectile.mass;
+        x_accel = -1*0.5*air_density*projectile.drag_coeff*curr_velocity*x_vel*area/projectile.mass;
+        y_accel = -1*0.5*air_density*projectile.drag_coeff*curr_velocity*y_vel*area/projectile.mass - gravity;
          
         x += x_vel*time_step;
         y += y_vel*time_step;
 
-        y_vel += y_accel - gravity*time_step;
+        y_vel += y_accel*time_step;
         x_vel += x_accel*time_step;
 
         if( y>max_height)
