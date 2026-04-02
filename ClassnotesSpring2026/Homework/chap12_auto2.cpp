@@ -5,13 +5,19 @@
 
 using namespace std;
 
+bool isConsecutiveFour_vector(const vector<int> values);
+bool isConsecutiveFour_matrix(const vector<vector<int>> values);
+
 int main()
 {
     int columns;
-    int rows = 6;
+    int rows;
     int temp;
     vector<vector<int>> matrix;
     vector<int> column_vals;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
 
     cout << "Enter number of columns: ";
     cin >> columns;
@@ -44,5 +50,71 @@ int main()
         cout << endl;
     }
 
+    cout << boolalpha << isConsecutiveFour_matrix(matrix) << endl;
+
     return 0;
+}
+
+bool isConsecutiveFour_vector(const vector<int> values)
+{
+    int count = 0;
+    int last = values[0];
+
+    cout << endl << "Checking vector: " << endl;
+    for(int i=0; i<values.size(); i++)
+    {
+        cout << values[i] << ' ';
+    }
+    cout << endl;
+
+    for(int i=1; i<values.size(); i++)
+    {
+        if(values[i] == last)
+            count++;
+        else
+            count = 0;
+        
+        if(count == 3)
+        {
+            return true;
+        }
+
+        last = values[i];
+    }
+
+    return false;
+}
+
+bool isConsecutiveFour_matrix(const vector<vector<int>> values)
+{
+    int rows = values.size();
+    int columns = values[0].size();
+
+    vector<int> check_vec;
+
+    // Check each row
+    for(int i=0; i<rows; i++)
+    {
+        if(isConsecutiveFour_vector(values[i]))
+        {
+            return true;
+        }
+    }
+
+    // Construct column vectors
+    for(int i=0; i<columns; i++)
+    {
+        for(int j=0; j<rows; j++)
+        {
+            check_vec.push_back(values[j][i]);
+        }
+        if(isConsecutiveFour_vector(check_vec))
+        {
+            return true;
+        }
+        check_vec.clear();
+    }
+
+
+    return false;
 }
