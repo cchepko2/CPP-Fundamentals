@@ -115,6 +115,60 @@ bool isConsecutiveFour_matrix(const vector<vector<int>> values)
         check_vec.clear();
     }
 
+    // Check major diagonal (lower part)
+  for (int i = 0; i < numberOfRows - 3; i++)
+  {
+    int numberOfElementsInDiagonal
+      = min(numberOfRows - i, numberOfColumns);
+    vector<int> diagonal(numberOfElementsInDiagonal);
+    for (int k = 0; k < numberOfElementsInDiagonal; k++)
+      diagonal[k] = values[k + i][k];
+
+    if (isConsecutiveFour(diagonal))
+      return true;
+  }
+
+  // Check major diagonal (upper part)
+  for (int j = 1; j < numberOfColumns - 3; j++)
+  {
+    int numberOfElementsInDiagonal
+      = min(numberOfColumns - j, numberOfRows);
+    vector<int> diagonal(numberOfElementsInDiagonal);
+    for (int k = 0; k < numberOfElementsInDiagonal; k++)
+      diagonal[k] = values[k][k + j];
+
+    if (isConsecutiveFour(diagonal))
+      return true;
+  }
+
+    // Check sub-diagonal (left part)
+    for (int j = 3; j < numberOfColumns; j++)
+    {
+        int numberOfElementsInDiagonal
+        = min(j + 1, numberOfRows);
+        vector<int> diagonal(numberOfElementsInDiagonal);
+
+        for (int k = 0; k < numberOfElementsInDiagonal; k++)
+        diagonal[k] = values[k][j - k];
+
+        if (isConsecutiveFour(diagonal))
+        return true;
+    }
+
+    // Check sub-diagonal (right part)
+    for (int i = 1; i < numberOfRows - 3; i++)
+    {
+        int numberOfElementsInDiagonal
+        = min(numberOfRows - i, numberOfColumns);
+        vector<int> diagonal(numberOfElementsInDiagonal);
+
+        for (int k = 0; k < numberOfElementsInDiagonal; k++)
+        diagonal[k] = values[k + i][numberOfColumns - k - 1];
+
+        if (isConsecutiveFour(diagonal))
+        return true;
+    }
+
 
     return false;
 }
