@@ -14,15 +14,15 @@ void get_distance_euler(PROJECTILE &projectile, double angle, double velocity);
 
 int main()
 {
-    PROJECTILE Projectile1; 
+    PROJECTILE tennis_ball; 
 
-    Projectile1.mass = 0.057; // Tennis Ball
-    Projectile1.radius = 0.034; // Tennis ball
-    Projectile1.drag_coeff = 0.47;
+    tennis_ball.mass = 0.057; // Tennis Ball
+    tennis_ball.radius = 0.034; // Tennis ball
+    tennis_ball.drag_coeff = 0.47;
 
-    cout << "Mass = " << Projectile1.mass << endl;
-    cout << "Radius = " << Projectile1.radius << endl;
-    cout << "Area = " << pow(Projectile1.radius, 2)*M_PI << endl;
+    cout << "Mass = " << tennis_ball.mass << endl;
+    cout << "Radius = " << tennis_ball.radius << endl;
+    cout << "Area = " << pow(tennis_ball.radius, 2)*M_PI << endl;
 
     double angle;
     double velocity;
@@ -34,11 +34,11 @@ int main()
     cout << "Enter a velocity in m/s: ";
     cin >> velocity;
 
-    get_distance_euler(Projectile1, angle, velocity);
+    get_distance_euler(tennis_ball, angle, velocity);
 
-    cout << "Distance traveled = " << Projectile1.distance << endl;
-    cout << "Height = " << Projectile1.height << endl;
-    cout << "Flight time = " << Projectile1.time << endl;
+    cout << "Distance traveled = " << tennis_ball.distance << endl;
+    cout << "Height = " << tennis_ball.height << endl;
+    cout << "Flight time = " << tennis_ball.time << endl;
 
 
     return 0;
