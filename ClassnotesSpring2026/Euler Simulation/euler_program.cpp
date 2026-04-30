@@ -1,5 +1,6 @@
 /*
 Structures declaration and use
+https://dynref.engr.illinois.edu/afp.html
 */
 
 #define _USE_MATH_DEFINES
