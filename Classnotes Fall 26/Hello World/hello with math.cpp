@@ -6,7 +6,7 @@ using namespace std;
 int main(void)
 {
 
-    int number = 2^8; // This is NOT 2 to power of 8, it is 2 OR 8
+    int number = 2^8; // This is NOT 2 to power of 8, it is 2 XOR 8
     cout << "Number = 2^8 = 2 OR 8 = " << number << endl;
     
     number = pow(2, 8); // I've already decleared my varible "number",
@@ -31,5 +31,8 @@ int main(void)
     cout << "number = 0x11 = " << number << endl;
 
     cout << "0x7F = " << 0x7f << endl;
+
+    number = 0b11111111111111111111111111111111;
+    cout << "number = " << number << endl;
 
 }
