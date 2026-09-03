@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <bitset>
 
 using namespace std;
 
@@ -33,6 +34,7 @@ int main(void)
     cout << "0x7F = " << 0x7f << endl;
 
     number = 0b11111111111111111111111111111111;
-    cout << "number = " << number << endl;
+    cout << "number = " << number << "\n"; // A '\n' character is functionally the same as endl
 
+    cout << "number in binary = " << bitset<32>(number) << endl;
 }
