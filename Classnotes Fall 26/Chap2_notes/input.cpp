@@ -5,6 +5,7 @@ Chap 2 notes, input
 */
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -30,9 +31,15 @@ int main()
     
     cout << "Enter full name: ";
     //cin >> full_name;
+    cin >> ws;
+    cin.ignore(1000, '\n');
     
     getline(cin, full_name);
     cout << "name is " << full_name << endl;
+
+    cout << "Enter a key to quit: " << endl;
+
+    cin.get();
     
     return 0;
 }
