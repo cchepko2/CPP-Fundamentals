@@ -6,8 +6,9 @@ int main()
 {
     int counter = 1;
 
-    while(counter <= 50)
+    while(counter <= 20)
     {
+        cout << counter << endl;
         if(counter%10 != 0)
         {
             cout << "Hello, World!" << endl;

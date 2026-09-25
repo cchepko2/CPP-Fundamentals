@@ -7,7 +7,7 @@ int main()
     int counter = 1;
 
     do
-    {
+    {  
         if(counter%10 != 0)
         {
             cout << "Hello, World!" << endl;
