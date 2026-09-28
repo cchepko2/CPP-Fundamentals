@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-#define delta_x 0.000001
+const double delta_x = 0.00000001;
 
 using namespace std;
 
@@ -9,8 +9,9 @@ int main()
 {
     double function = 0; // function = area of f(x) = x
     double last_x=0;
+    
 
-    for(double x=0; x<10; x+=delta_x)
+    for(double x=0; x<=10; x+=delta_x)
     {
         function += delta_x*x;
 
