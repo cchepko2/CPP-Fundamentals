@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const double l_m3 = 0.001;
+const double m3_per_liter = 0.001;
 
 void test();
 
@@ -39,7 +39,7 @@ int main()
 double liters_to_m3(double liters)
 {
     // Converts liters to cubic meters
-    return liters*l_m3;
+    return liters*m3_per_liter;
 }
 
 void test()
